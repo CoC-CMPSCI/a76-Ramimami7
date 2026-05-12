@@ -1,9 +1,6 @@
 #ifndef MAIN_HPP
 #define MAIN_HPP
 
-// Construct an array-of-records from a multi-column data file (babyname.txt)
-// and search for matching names by state and starting character.
-
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -32,11 +29,12 @@ int findNames(int cnt, string state[], string gender[], int year[], string name[
 {
     int found = 0;
     for (int i = 0; i < cnt; i++) {
-    if (state[i] == stname && name[i][0] == starting) {
-        printoutcontents(state[i], gender[i], year[i], name[i], count[i]);
-        found++;
+        if (state[i] == stname && name[i][0] == starting) {
+            printoutcontents(state[i], gender[i], year[i], name[i], count[i]);
+            found++;
         }
     }
+    return found;
 }
 
 void printoutallrecords(int cnt, string state[], string gender[], int year[], string name[], int count[])
